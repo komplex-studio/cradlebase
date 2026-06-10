@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-stone-700 font-sans antialiased;
+}
+
+/* Magazine "kicker" / eyebrow label */
+.kicker {
+  @apply inline-flex items-center font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-brand;
+}
+
+/* Thin top accent bar used in the header */
+.accent-bar {
+  background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 55%, #172554 100%);
+}
+
+/* ------------------------------------------------------------------ */
+/* Long-form article typography — serif body for an editorial read.    */
+/* ------------------------------------------------------------------ */
+.article {
+  @apply font-serif text-[1.15rem] leading-8 text-stone-800;
+}
+.article h2 {
+  @apply font-display text-ink text-3xl font-semibold tracking-tight mt-12 mb-4;
+}
+.article h3 {
+  @apply font-display text-ink text-2xl font-semibold tracking-tight mt-9 mb-3;
+}
+.article h4 {
+  @apply font-display text-ink text-xl font-semibold mt-7 mb-2;
+}
+.article p {
+  @apply my-5;
+}
+.article ul {
+  @apply list-disc pl-6 my-5 space-y-2;
+}
+.article ol {
+  @apply list-decimal pl-6 my-5 space-y-2;
+}
+.article a {
+  @apply text-brand underline decoration-brand/30 underline-offset-2 hover:decoration-brand transition-colors;
+}
+.article strong {
+  @apply font-semibold text-ink;
+}
+.article code {
+  @apply font-mono text-[0.85em] bg-ink/[0.06] text-ink rounded px-1.5 py-0.5;
+}
+.article pre {
+  @apply font-mono bg-ink text-stone-100 rounded-xl p-5 overflow-x-auto my-7 text-[0.9rem] leading-7 shadow-card;
+}
+.article pre code {
+  @apply bg-transparent text-stone-100 p-0;
+}
+.article blockquote {
+  @apply border-l-2 border-brand pl-5 my-7 font-display italic text-xl text-ink;
+}
+.article img {
+  @apply rounded-xl my-7 w-full;
+}
+.article hr {
+  @apply my-10 border-line;
+}
+
+/* Editorial drop cap on the opening paragraph */
+.article > p:first-of-type::first-letter {
+  @apply font-display font-semibold text-ink float-left mr-3 mt-2;
+  font-size: 3.6rem;
+  line-height: 0.7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Looping icon animations for the Mission section value cards.        */
+/* Gated behind no-preference so reduced-motion users see them static. */
+/* ------------------------------------------------------------------ */
+.anim-bar,
+.anim-float {
+  transform-box: fill-box;
+}
+.anim-bar {
+  transform-origin: bottom;
+}
+
+@keyframes barRise {
+  0%, 100% { transform: scaleY(0.45); }
+  50% { transform: scaleY(1); }
+}
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+@keyframes floatUp {
+  0% { transform: translate(-2px, 2px); opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { transform: translate(4px, -4px); opacity: 0.4; }
+}
+
+@keyframes pingDot {
+  75%, 100% { transform: scale(2.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-bar { animation: barRise 1.6s ease-in-out infinite; }
+  .anim-bar-2 { animation-delay: 0.2s; }
+  .anim-bar-3 { animation-delay: 0.4s; }
+  .anim-pulse-soft { animation: pulseSoft 2.4s ease-in-out infinite; transform-origin: center; }
+  .anim-float { animation: floatUp 2.8s ease-in-out infinite; }
+  .anim-ping { animation: pingDot 1.8s cubic-bezier(0, 0, 0.2, 1) infinite; }
+}
+
+/* Subtle dotted grid used behind the "work with us" panel */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}

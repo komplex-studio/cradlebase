@@ -1,0 +1,4 @@
+# Replace pub-0000000000000000 with YOUR AdSense publisher ID (digits only),
+# then remove this comment. Google reads this file at https://yourdomain.com/ads.txt
+# to verify you're authorized to sell ad inventory. Required for AdSense payouts.
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
