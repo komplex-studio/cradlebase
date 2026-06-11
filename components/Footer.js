@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/categories";
-import Brandmark from "@/components/Brandmark";
+import { SITE_BRAND_TAGLINE } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -14,12 +14,15 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand + newsletter */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-0.5">
-              <Brandmark className="h-8 w-8" inverse />
-              <span className="font-display text-xl font-semibold text-paper">
-                CradleBase
-              </span>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-inverse.svg"
+              alt="Cradlebase"
+              className="h-8 w-auto"
+            />
+            <p className="mt-3 font-serif text-sm italic text-brand/90">
+              {SITE_BRAND_TAGLINE}
+            </p>
             <p className="mt-4 max-w-sm text-sm leading-6 text-paper/60">
               Depth-first writing on software engineering, security and the
               modern stack — for engineers who build.
@@ -112,7 +115,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-paper/45">
           <p>© {year} Cradlebase. All rights reserved.</p>
-          <p>Engineering, security &amp; modern stacks.</p>
+          <p>{SITE_BRAND_TAGLINE}</p>
         </div>
       </div>
     </footer>

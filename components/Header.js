@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/categories";
-import Brandmark from "@/components/Brandmark";
+import { SITE_BRAND_TAGLINE } from "@/lib/site";
 
 export default function Header() {
   return (
@@ -12,10 +12,15 @@ export default function Header() {
         {/* Masthead row */}
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex items-center justify-between gap-4 py-4">
-            <Link href="/" className="flex items-center gap-0.5 group">
-              <Brandmark className="h-9 w-9 transition-transform group-hover:-rotate-3" />
-              <span className="font-display text-2xl font-semibold tracking-tight text-ink">
-                CradleBase
+            <Link href="/" className="group inline-flex flex-col gap-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo.svg"
+                alt="Cradlebase"
+                className="h-9 w-auto transition-transform group-hover:-translate-y-0.5"
+              />
+              <span className="hidden sm:block font-serif text-[0.72rem] italic text-ink/55">
+                {SITE_BRAND_TAGLINE}
               </span>
             </Link>
 
