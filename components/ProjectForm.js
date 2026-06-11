@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-const BUDGETS = ["< $10k", "$10k – $25k", "$25k – $50k", "$50k – $100k", "$100k+"];
-const TIMELINES = ["ASAP", "1–3 months", "3–6 months", "Just exploring"];
+const BUDGETS = ["< $2k", "$2k – $4k", "$4k – $10k"];
+const TIMELINES = ["ASAP", "1–3 Weeks", "1–2 months", "Just exploring"];
 
 const Chevron = () => (
   <svg

@@ -14,8 +14,8 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand + newsletter */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <Brandmark className="h-8 w-8" />
+            <div className="flex items-center gap-0.5">
+              <Brandmark className="h-8 w-8" inverse />
               <span className="font-display text-xl font-semibold text-paper">
                 CradleBase
               </span>

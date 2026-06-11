@@ -12,7 +12,7 @@ export default function Header() {
         {/* Masthead row */}
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex items-center justify-between gap-4 py-4">
-            <Link href="/" className="flex items-center gap-2.5 group">
+            <Link href="/" className="flex items-center gap-0.5 group">
               <Brandmark className="h-9 w-9 transition-transform group-hover:-rotate-3" />
               <span className="font-display text-2xl font-semibold tracking-tight text-ink">
                 CradleBase
